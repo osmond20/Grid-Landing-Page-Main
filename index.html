@@ -3,58 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <link rel="preload" href="assets/fonts/inter/inter-v20-latin-regular.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin>
+  <link rel="preload" href="assets/fonts/inter/inter-v20-latin-500.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin>
+  <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-
   <title>Frontend Mentor | Grid landing page</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
-
-  <!-- Nav -->
-  Bridge Collective
-
-  <!-- Hero -->
-  A classroom for every child.
-
-  We fund the schools, train the teachers, and measure what works — so every child we reach today becomes a graduate tomorrow.
-
-  <!-- Stats -->
-  2.4M
-  Students reached
-  Across 31 countries since 2011.
-
-  1,284
-  Schools partnered
-  In 14 countries, from Kenya to Guatemala.
-
-  38K
-  Teachers trained
-  Equipped with modern tools and methodology.
-
-  3.1×
-  Graduation lift
-  Partner schools outperform national averages 3x.
-
-  <!-- Footer -->
-  © 2026 Bridge Collective
-  Registered charity 12345678
-
-  <!-- Menu panel — hidden until the hamburger is activated -->
-  About
-  Our Work
-  Partners
-  Annual Report
-  Donate
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
+<nav class="nav-container">
+  <div class="nav-title-container">
+    <div class="circle"></div>
+    <h1 class="nav-title">Bridge Collective</h1>
   </div>
+  <div class="nav-menu-container"><img class="menu-button" src="assets/images/icon-menu.svg" alt="" height="20" width="20"></div>
+</nav>
+<aside aria-hidden="true" hidden></aside>
+<main class="main-el"> <!--Display grid 2x2-->
+  <section class="hero-section"></section>
+  <section class="stats-section"> <!--Display grid 2x2-->
+    <div class="stats"></div>
+    <div class="stats"></div>
+    <div class="stats"></div>
+    <div class="stats"></div>
+  </section>
+</main>
+<footer class="footer-el">
+  <div>&copy;  © 2026 Bridge Collective</div>
+  <div><p>Registered charity 12345678</p></div>
+</footer>
 </body>
 </html>
