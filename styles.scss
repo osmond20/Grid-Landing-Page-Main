@@ -150,11 +150,12 @@ background-color: var(--color-blue-700);
   transition: opacity 0.3s ease;
 }
 
-// SHOWS EVENT ON TOGGLE
+// SHOWS MENU ON TOGGLE
 .menu.show{
   opacity: 1;
 }
 
+// MENU LINKS
 .menu-links{
   font-size: calc(30 / 16 * 1rem);
   text-decoration: none;
@@ -165,11 +166,11 @@ background-color: var(--color-blue-700);
   transition: background-size 0.3s ease;
 }
 
+// MENU HOVER & FOCUS STATES
 .menu-links:hover, .menu-links:focus{
   background-size: 100% 1px;
   outline: none;
 }
-
 
 .stats-section{
   height: 100%;
