@@ -1,5 +1,7 @@
 const menuButton = document.querySelector(".menu-button");
 const menu = document.querySelector(".menu");
+const counters = document.querySelectorAll(".counters");
+const speed = 200;
 
 // Menu functionality
 menuButton.addEventListener("click", () =>{
@@ -14,3 +16,28 @@ menuButton.addEventListener("click", () =>{
         menuButton.setAttribute('src', "assets/images/icon-menu.svg");
     } 
 });
+
+//Fetching from JSON
+
+// Counter for stats
+counters.forEach(counter =>{
+    const updateCount = () =>{
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.textContent;
+
+        const inc = 1;
+        const delay = 20;
+
+        if(count < target){
+            counter.textContent = Math.min(count + inc, target);
+            setTimeout(updateCount, delay);
+        }
+        else
+        {
+            count.textContent = target;
+        }
+    }
+
+    updateCount();
+})
+
