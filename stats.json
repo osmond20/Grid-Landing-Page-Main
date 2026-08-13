@@ -1,0 +1,20 @@
+{
+  "stats": [
+    {
+      "label": "Stat 1",
+      "value": 2.4
+    },
+    {
+      "label": "Stat 2",
+      "value": 1284
+    },
+    {
+      "label": "Stat 3",
+      "value": 38
+    },
+    {
+      "label": "Stat 4",
+      "value": 3.1
+    }
+  ]
+}
