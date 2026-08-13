@@ -75,6 +75,7 @@ align-items: center;
 font-family: var(--font-inter);
 color:var(--color-white);
 background-color: var(--color-blue-700);
+font-size: var(--font-size-paragraph);
 }
 
 // NAV
@@ -170,6 +171,27 @@ background-color: var(--color-blue-700);
 .menu-links:hover, .menu-links:focus{
   background-size: 100% 1px;
   outline: none;
+}
+
+.hero-section{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: start;
+  padding-inline: calc(30 / 16 * 1rem);
+  gap: calc(20 / 16 * 1rem);
+}
+
+.hero-section-title{
+  margin-block-start: calc(55 / 16 * 1rem);
+  font-size: calc(41 / 16 * 1rem);
+  font-weight: 500;
+}
+
+.hero-section-paragraph{
+  line-height: 1.6em;
+  padding-inline-end: calc(10 / 16 * 1rem);
+
 }
 
 .stats-section{

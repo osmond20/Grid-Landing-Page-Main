@@ -74,6 +74,7 @@ body {
   font-family: var(--font-inter);
   color: var(--color-white);
   background-color: var(--color-blue-700);
+  font-size: var(--font-size-paragraph);
 }
 
 .nav-container {
@@ -162,6 +163,26 @@ body {
 .menu-links:hover, .menu-links:focus {
   background-size: 100% 1px;
   outline: none;
+}
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: start;
+  padding-inline: 1.875rem;
+  gap: 1.25rem;
+}
+
+.hero-section-title {
+  margin-block-start: 3.4375rem;
+  font-size: 2.5625rem;
+  font-weight: 500;
+}
+
+.hero-section-paragraph {
+  line-height: 1.6em;
+  padding-inline-end: 0.625rem;
 }
 
 .stats-section {
