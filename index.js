@@ -18,14 +18,22 @@ menuButton.addEventListener("click", () =>{
 });
 
 //Fetching from JSON
+fetch("./stats.json")
+.then(res => res.json())
+.then(stats =>{
+    const arr= stats.stats;
+    arr.forEach((stat, index) => {
+       counters[index].setAttribute("data-target", stat.value);
+       
+    });
 
-// Counter for stats
-counters.forEach(counter =>{
+    // Counter for stats
+    counters.forEach(counter =>{
     const updateCount = () =>{
         const target = +counter.getAttribute('data-target');
         const count = +counter.textContent;
 
-        const inc = 1;
+        const inc = 4;
         const delay = 20;
 
         if(count < target){
@@ -34,10 +42,19 @@ counters.forEach(counter =>{
         }
         else
         {
-            count.textContent = target;
+            // Format only the second counter (index 1) with comma
+            if(counter === counters[1]){
+                counter.textContent = target.toLocaleString();
+            } else {
+                counter.textContent = target;
+            }
         }
     }
 
-    updateCount();
+        updateCount();
+        })
 })
+.catch(err => console.error('feth error', err));
+
+
 
