@@ -2,6 +2,8 @@ const menuButton = document.querySelector(".menu-button");
 const menu = document.querySelector(".menu");
 const counters = document.querySelectorAll(".counters");
 const speed = 200;
+const mainEl = document.querySelector(".main-el");
+const footerEl = document.querySelector(".footer-el");
 
 // Menu functionality
 menuButton.addEventListener("click", () =>{
@@ -15,6 +17,9 @@ menuButton.addEventListener("click", () =>{
     else{
         menuButton.setAttribute('src', "assets/images/icon-menu.svg");
     } 
+
+    mainEl.classList.toggle("dim");
+    footerEl.classList.toggle("dim");
 });
 
 //Fetching from JSON
@@ -33,8 +38,8 @@ fetch("./stats.json")
         const target = +counter.getAttribute('data-target');
         const count = +counter.textContent;
 
-        const inc = 4;
-        const delay = 20;
+        const inc = 1 // Slower increment
+        const delay = 30; // Faster refresh to make animation smoother
 
         if(count < target){
             counter.textContent = Math.min(count + inc, target);
@@ -52,7 +57,7 @@ fetch("./stats.json")
     }
 
         updateCount();
-        })
+    })
 })
 .catch(err => console.error('feth error', err));
 
