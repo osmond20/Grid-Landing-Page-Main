@@ -50,7 +50,7 @@ fetch("./stats.json")
     // Counter for stats
     counters.forEach((counter, index) =>{
 
-        let target = Number(counter.getAttribute("data-target"));
+        const target = Number(counter.getAttribute("data-target"));
         let count  = 0;
         const updateCount = () =>{
             const inc = target / speed;
