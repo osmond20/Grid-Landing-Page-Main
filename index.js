@@ -22,6 +22,18 @@ menuButton.addEventListener("click", () =>{
     footerEl.classList.toggle("dim");
 });
 
+// Click functionality so that menu closes without onclick menu button event
+mainEl.addEventListener("click", () => {
+    if(menu.classList.contains("show") === true){
+        menu.classList.remove("show");
+        menuButton.setAttribute('src', "assets/images/icon-menu.svg");
+        mainEl.classList.remove("dim");
+        footerEl.classList.remove("dim");
+        menu.setAttribute('aria-expanded', false);
+    }
+});
+
+
 //Fetching from JSON
 fetch("./stats.json")
 .then(res => res.json())
