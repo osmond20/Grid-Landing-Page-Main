@@ -67,6 +67,7 @@ ol {
 
 body {
   position: relative;
+  overflow-x: hidden;
   min-height: 100vh;
   width: 100%;
   display: flex;
@@ -246,24 +247,44 @@ body {
 }
 
 @media (min-width: 768px) {
+  .nav-title-container {
+    padding-inline-start: 3.125rem;
+  }
   .main-el {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(1, 1fr);
   }
   .menu {
+    position: fixed;
     width: 25%;
-    right: 0;
+    right: -25%;
     height: calc(100% - 72px);
     justify-content: start;
     align-items: end;
     padding-block: 3.125rem;
     padding-inline: 1.875rem;
+    transition: right 0.45s ease-out;
+  }
+  .menu.show {
+    right: 0;
   }
   .hero-section {
     height: 100%;
     grid-column: 1;
     grid-row: 1/2;
+  }
+  .hero-section-title {
+    font-size: 3.4375rem;
+    padding-inline-start: 1.25rem;
+    padding-inline-end: 11.25rem;
+    padding-block-end: 0.0625rem;
+  }
+  .hero-section-paragraph {
+    line-height: 1.5em;
+    padding-block-start: 1.25rem;
+    padding-inline-start: 1.25rem;
+    padding-inline-end: 11.25rem;
   }
   .stats-section {
     display: grid;

@@ -1,7 +1,7 @@
 const menuButton = document.querySelector(".menu-button");
 const menu = document.querySelector(".menu");
 const counters = document.querySelectorAll(".counters");
-const speed = 200;
+const speed = 100;
 const mainEl = document.querySelector(".main-el");
 const footerEl = document.querySelector(".footer-el");
 
@@ -33,28 +33,39 @@ fetch("./stats.json")
     });
 
     // Counter for stats
-    counters.forEach(counter =>{
-    const updateCount = () =>{
-        const target = +counter.getAttribute('data-target');
-        const count = +counter.textContent;
+    counters.forEach((counter, index) =>{
 
-        const inc = 1 // Slower increment
-        const delay = 30; // Faster refresh to make animation smoother
+        let target = Number(counter.getAttribute("data-target"));
+        let count  = 0;
+    const updateCount = () =>{
+        const inc = target / speed;
 
         if(count < target){
-            counter.textContent = Math.min(count + inc, target);
-            setTimeout(updateCount, delay);
+            count += inc;
+
+            if(count > target){
+                count = target;
+            }
+
+            if(index === 0  || index === 3){
+                counter.textContent = count.toFixed(1);
+            }
+            else{
+                counter.textContent = Math.floor(count).toLocaleString();
+            }
+
+            setTimeout(updateCount, 30);
         }
-        else
-        {
-            // Format only the second counter (index 1) with comma
-            if(counter === counters[1]){
+        else{
+           
+            if(index === 0 || index === 3){
+                counter.textContent = target.toFixed(1);
+            }
+            else{
                 counter.textContent = target.toLocaleString();
-            } else {
-                counter.textContent = target;
             }
         }
-    }
+    };
 
         updateCount();
     })
