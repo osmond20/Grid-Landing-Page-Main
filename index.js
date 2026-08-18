@@ -1,5 +1,6 @@
 const menuButton = document.querySelector(".menu-button");
 const menu = document.querySelector(".menu");
+const nopointer = document.querySelector(".stats-section");
 const counters = document.querySelectorAll(".counters");
 const speed = 100;
 const mainEl = document.querySelector(".main-el");
@@ -13,9 +14,10 @@ menuButton.addEventListener("click", () =>{
     if(isOpen === true){
         menuButton.setAttribute('src', "assets/images/icon-close.svg");
         menu.setAttribute('aria-expanded', isOpen);
+        nopointer.classList.add("no-pointer");
     }
     else{
-        menuButton.setAttribute('src', "assets/images/icon-menu.svg");
+        menuButton.setAttribute('src', "assets/images/icon-menu.svg"); 
     } 
 
     mainEl.classList.toggle("dim");
@@ -30,6 +32,7 @@ mainEl.addEventListener("click", () => {
         mainEl.classList.remove("dim");
         footerEl.classList.remove("dim");
         menu.setAttribute('aria-expanded', false);
+        nopointer.classList.remove("no-pointer");
     }
 });
 
