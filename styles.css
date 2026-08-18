@@ -252,7 +252,7 @@ body {
   }
   .main-el {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 50%);
     grid-template-rows: repeat(1, 1fr);
   }
   .menu {
@@ -265,7 +265,7 @@ body {
     align-items: end;
     padding-block: 3.125rem;
     padding-inline: 1.875rem;
-    transition: right 0.45s ease-out;
+    transition: right 0.4s ease-in-out;
   }
   .menu.show {
     right: 0;
@@ -320,5 +320,11 @@ body {
     align-items: center;
     justify-content: space-between;
     padding-inline-end: 1.75rem;
+    padding-inline-start: 3.0625rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .menu {
+    transition: right 0.65s ease-out;
   }
 }/*# sourceMappingURL=styles.css.map */

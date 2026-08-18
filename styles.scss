@@ -123,7 +123,6 @@ font-size: var(--font-size-paragraph);
     width: 100%;
 }
 
-
 // MENU
 .menu{
   position: absolute;
@@ -264,7 +263,7 @@ font-size: var(--font-size-paragraph);
 
   .main-el{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 50%);
     grid-template-rows: repeat(1, 1fr);
   }
 
@@ -278,7 +277,7 @@ font-size: var(--font-size-paragraph);
       align-items: end;
       padding-block: calc(50 / 16 * 1rem);
       padding-inline: calc(30 / 16 * 1rem);
-      transition: right 0.45s ease-out;
+      transition: right 0.4s ease-in-out;
   }
 
   .menu.show{
@@ -343,5 +342,12 @@ font-size: var(--font-size-paragraph);
     align-items: center;
     justify-content: space-between;
     padding-inline-end: calc(28 / 16 * 1rem);
+    padding-inline-start: calc(49 / 16 * 1rem);
+  }
+}
+
+@media(prefers-reduced-motion: reduce){
+  .menu{
+      transition: right 0.65s ease-out;
   }
 }
