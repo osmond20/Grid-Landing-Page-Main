@@ -37,35 +37,35 @@ fetch("./stats.json")
 
         let target = Number(counter.getAttribute("data-target"));
         let count  = 0;
-    const updateCount = () =>{
-        const inc = target / speed;
+        const updateCount = () =>{
+            const inc = target / speed;
 
-        if(count < target){
-            count += inc;
+            if(count < target){
+                count += inc;
 
-            if(count > target){
-                count = target;
-            }
+                if(count > target){
+                    count = target;
+                }
 
-            if(index === 0  || index === 3){
-                counter.textContent = count.toFixed(1);
+                if(index === 0  || index === 3){
+                    counter.textContent = count.toFixed(1);
+                }
+                else{
+                    counter.textContent = Math.floor(count).toLocaleString();
+                }
+
+                setTimeout(updateCount, 30);
             }
             else{
-                counter.textContent = Math.floor(count).toLocaleString();
+            
+                if(index === 0 || index === 3){
+                    counter.textContent = target.toFixed(1);
+                }
+                else{
+                    counter.textContent = target.toLocaleString();
+                }
             }
-
-            setTimeout(updateCount, 30);
-        }
-        else{
-           
-            if(index === 0 || index === 3){
-                counter.textContent = target.toFixed(1);
-            }
-            else{
-                counter.textContent = target.toLocaleString();
-            }
-        }
-    };
+        };
 
         updateCount();
     })
